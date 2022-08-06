@@ -43,7 +43,7 @@
         "symfony/yaml": "6.1.*",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0",
-      "ext-http": "*"
+        "ext-http": "*"
     },
     "config": {
         "allow-plugins": {

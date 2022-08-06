@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un utilisateur{% endblock %}
+{% block body %}
+    <style>
+        input{
+            width: 400px;
+            margin-left: 40px;
+            padding: 5px;
+            margin-top: 5px;
+        }
+        label {
+            padding: 5px;
+        }
+    </style>
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+{% endblock %}
