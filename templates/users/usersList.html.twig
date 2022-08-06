@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+{% block title%} Users List{% endblock %}
+
+{% block body %}
+    <style>
+        h1{
+            margin-top: 50px;
+            text-align: center;
+            font-size: 50px;
+            color: cornflowerblue;
+        }
+    </style>
+    <h1>Users List</h1>
+    {% if users %}
+        <table id="users" class="table table-striped">
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.nom }}</td>
+                    <td>{{ user.prenom }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>
+                        <a href="/user/edit/{{ user.id }}" class="btn btn-dark">Modifier</a>
+                        <a href="/user/delete/{{ user.id }}" class="btn btn-danger"
+                           onclick="return confirm('Etes-vous sûr de supprimer cet utilisateur?');">Supprimer</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Aucun articles</p>
+    {% endif %}
+{% endblock %}
